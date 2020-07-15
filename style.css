@@ -1,7 +1,7 @@
 body{
-  background-image: linear-gradient(red, black, red);
+  height: 600px;
 }
-/* .back {
+.back {
     position: fixed;
     padding: 0;
     margin: 0;
@@ -9,12 +9,13 @@ body{
     left: 0;
     width: 100%;
     height: 100%;
-    background: white;
+    background-image: linear-gradient(black, red, black);
+    /* background-color: rgb(37, 35, 35); */
     animation-name: backdiv;
     animation-duration: 1s; 
     animation-iteration-count: infinite;
     
-  } */
+  }
 
   .heart {
     position: absolute;
@@ -55,7 +56,7 @@ body{
 
   @keyframes backdiv {
     50% {
-      background: #ffe6f2;
+      background-image: linear-gradient(red, black, red);
     }
   }
 
@@ -67,14 +68,46 @@ body{
       transform: scale(0.6) rotate(-45deg);
     }
   }
-  #body{
-    text-align: center;
-    margin-top: 5em;
-    color: white;
+  .small-heart {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    height: 3.1em;
+    width: 3.1em;
+    transform: rotate(-45deg);
+    animation-name: beat;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
   }
-  header{
-    background-color: #150101cc;
-    color: white;
-    padding-top: 2px;
-    margin-top: -1em;
+  .small-heart:after {
+    background-color: black;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    left: 30px;
+}
+  .small-heart:before {
+    background-color: black;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -30px;
+    left: 0px;
   }
+  @keyframes beat {
+    0% {
+      transform: scale(1) rotate(-45deg);
+    }
+    50% {
+      transform: scale(0.6) rotate(-45deg);
+    }
+  } 
